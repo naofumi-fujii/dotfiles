@@ -1,0 +1,36 @@
+[user]
+  name = naofumi-fujii
+  email = naofumi.fujii@gmail.com
+[alias]
+  undo = !git reset --soft HEAD^
+  dif = diff
+  br = branch
+  co = commit
+  cl = clean
+  ck = checkout
+  st = status
+  plr = pull-request
+  purge-merged-branches = !git branch --merged | grep -v \\* | grep -v master | xargs -I % git branch -d %
+  current-branch = !git branch -a | grep '^*' | cut -b 3-
+[push]
+  default = simple
+[core]
+  excludesfile = ~/.gitignore_global
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+[diff]
+  compactionHeuristic = true
+[interactive]
+  diffFilter = diff-highlight
+[commit]
+  verbose = true
+[ghq]
+  root = ~/src
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[diff "cp932"]
+    textconv=iconv -f cp932 -t utf-8
+[fetch]
+	prune = true
