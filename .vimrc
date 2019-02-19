@@ -149,6 +149,7 @@ autocmd BufRead,BufNewFile *.geojson setfiletype json
 
 "easymotion
 let g:EasyMotion_do_mapping = 0 "Disable default mappings
+let g:EasyMotion_keys='hklyuiopnm,qwertzxcvbasdgjf'
 "nmap s <Plug>(easymotion-s2)
 
 set nohlsearch
