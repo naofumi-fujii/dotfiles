@@ -37,7 +37,7 @@ call dein#add('scrooloose/nerdcommenter')
 call dein#add('thinca/vim-quickrun')
 call dein#add('tpope/vim-abolish')
 call dein#add('tpope/vim-endwise')
-call dein#add('vim-scripts/Align')
+call dein#add('junegunn/vim-easy-align')
 call dein#add('mattn/emmet-vim')
 call dein#add('bfredl/nvim-miniyank')
 
