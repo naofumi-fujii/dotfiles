@@ -195,6 +195,7 @@ let g:ale_linters ={
       \}
 let g:ale_fixers = {
       \ 'javascript': ['prettier', 'eslint'],
+      \ 'vue': ['eslint'],
       \ 'json': ['prettier'],
       \ }
 let g:ale_fix_on_save = 1
