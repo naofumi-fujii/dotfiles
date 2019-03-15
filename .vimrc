@@ -41,6 +41,9 @@ call dein#add('junegunn/vim-easy-align')
 call dein#add('mattn/emmet-vim')
 call dein#add('bfredl/nvim-miniyank')
 
+call dein#add('tyru/open-browser.vim')
+call dein#add('tyru/open-browser-github.vim')
+
 "ruby
 call dein#add('vim-ruby/vim-ruby')
 call dein#add('tpope/vim-rails')
