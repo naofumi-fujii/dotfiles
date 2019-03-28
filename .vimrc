@@ -52,6 +52,10 @@ call dein#add('slim-template/vim-slim')
 "css
 call dein#add('ap/vim-css-color')
 
+"vue
+call dein#add('posva/vim-vue')
+call dein#add('wavded/vim-stylus')
+
 " Required:
 call dein#end()
 
