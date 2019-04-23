@@ -66,6 +66,9 @@ eval "$(ndenv init -)"
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init -)"
+
 set -o ignoreeof
 
 setopt share_history
