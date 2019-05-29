@@ -11,6 +11,7 @@
   st = status
   plr = pull-request
   purge-merged-branches = !git branch --merged | grep -v \\* | grep -v master | xargs -I % git branch -d %
+  bye-branches-except-master-and-current = !git branch | grep -v \\* | grep -v master | xargs -I % git branch -D %
   current-branch = !git branch -a | grep '^*' | cut -b 3-
 [push]
   default = simple
