@@ -156,7 +156,7 @@ function rename(){
 
 function gg() {
   if [ -n "$1" ]; then
-    git grep --max-depth 3 -I -n "$1" . | peco --exec 'awk -F : '"'"'{print "-c" $2 " " $1}'"'"' | xargs -o nvim'
+    git grep -I -n --perl-regexp "$1" . | peco --exec 'awk -F : '"'"'{print "-c" $2 " " $1}'"'"' | xargs -o nvim'
   else
     rg . -n --color never | peco --exec 'awk -F : '"'"'{print "-c" $2 " " $1}'"'"' | xargs -o nvim'
   fi
