@@ -40,6 +40,7 @@ call dein#add('tpope/vim-endwise')
 call dein#add('junegunn/vim-easy-align')
 call dein#add('mattn/emmet-vim')
 call dein#add('bfredl/nvim-miniyank')
+call dein#add('ruanyl/vim-gh-line')
 
 "ruby
 call dein#add('vim-ruby/vim-ruby')
