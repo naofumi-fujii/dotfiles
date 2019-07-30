@@ -60,8 +60,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)"
+eval "$(nodenv init -)"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
