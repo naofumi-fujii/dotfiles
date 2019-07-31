@@ -151,6 +151,7 @@ let g:vim_json_syntax_conceal = 0
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 autocmd BufRead,BufNewFile *.rb setfiletype ruby
 autocmd BufRead,BufNewFile *.geojson setfiletype json
+au! BufRead,BufNewFile *.tt setfiletype html
 
 "easymotion
 let g:EasyMotion_do_mapping = 0 "Disable default mappings
