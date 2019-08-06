@@ -242,7 +242,7 @@ function! s:OnEvent(job_id, data, event) dict
   "call append(line('$'), str)
   echom printf('%s: %s',a:event,string(a:data))
 endfunction
-command! GenerateRipperTags call jobstart(['bash', '-c', 'ripper-tags -R --exclude=vendor'], extend({'shell': 'shell 2'}, s:callbacks))
+command! GenerateRipperTags call jobstart(['bash', '-c', 'ripper-tags -R -V --exclude=vendor'], extend({'shell': 'shell 2'}, s:callbacks))
 let s:callbacks = {
       \ 'on_stdout': function('s:OnEvent'),
       \ 'on_stderr': function('s:OnEvent'),
