@@ -240,7 +240,7 @@ function! s:OnEvent(job_id, data, event) dict
   "endif
 
   "call append(line('$'), str)
-  echom printf('%s: %s',a:event,string(a:data))
+  "echom printf('%s: %s',a:event,string(a:data))
 endfunction
 command! GenerateRipperTags call jobstart(['bash', '-c', 'ripper-tags -R -V --exclude=vendor'], extend({'shell': 'shell 2'}, s:callbacks))
 let s:callbacks = {
