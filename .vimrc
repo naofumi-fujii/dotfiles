@@ -231,13 +231,13 @@ endfun
 autocmd BufWritePost *.rb GenerateRipperTags
 
 function! s:OnEvent(job_id, data, event) dict
-  if a:event == 'stdout'
-    let str = self.shell.' stdout: '.join(a:data)
-  elseif a:event == 'stderr'
-    let str = self.shell.' stderr: '.join(a:data)
-  else
-    let str = self.shell.' exited'
-  endif
+  "if a:event == 'stdout'
+  "  let str = self.shell.' stdout: '.join(a:data)
+  "elseif a:event == 'stderr'
+  "  let str = self.shell.' stderr: '.join(a:data)
+  "else
+  "  let str = self.shell.' exited'
+  "endif
 
   "call append(line('$'), str)
   echom printf('%s: %s',a:event,string(a:data))
