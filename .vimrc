@@ -196,9 +196,13 @@ let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
 "brew install fzf
 set rtp+=/usr/local/opt/fzf
 
-let g:ale_linters ={
-      \   'haskell': ['ghc-mod', 'stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
-      \}
+let g:ale_linters = {
+      \ 'html': [],
+      \ 'css': ['stylelint'],
+      \ 'javascript': ['eslint'],
+      \ 'vue': ['eslint'],
+      \ }
+let g:ale_linter_aliases = {'vue': 'css'}
 let g:ale_fixers = {
       \ 'javascript': ['prettier', 'eslint'],
       \ 'typescript': ['prettier', 'eslint'],
