@@ -121,8 +121,8 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 function git-ls-files-vim () {
-  #local PASSED=$(git ls-files | peco --query "$LBUFFER")
-  local PASSED=$(tree -N -if | peco --query "$LBUFFER")
+  local PASSED=$(git ls-files | peco --query "$LBUFFER")
+  #local PASSED=$(tree -N -if | peco --query "$LBUFFER")
   if [ -n "$PASSED" ]; then
     BUFFER="vi ${PASSED}"
     zle accept-line
