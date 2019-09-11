@@ -233,3 +233,14 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " http://vim.wikia.com/wiki/Dictionary_completions
 au FileType * execute 'setlocal dict+=~/src/github.com/pocke/dicts/ruby.dict'
+
+" quickly remove trailing whitespaces
+fun! FixTrailingWhitespaces()
+  let l:save = winsaveview()
+  %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+command! FixTrailingWhitespaces call FixTrailingWhitespaces()
+
+"on save
+autocmd BufWritePre * FixTrailingWhitespaces
