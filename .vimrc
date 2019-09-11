@@ -222,17 +222,6 @@ let g:ale_ruby_rubocop_executable = 'bundle'
 noremap ; :
 noremap : ;
 
-" quickly remove trailing whitespaces
-fun! FixTrailingWhitespaces()
-  let l:save = winsaveview()
-  %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-command! FixTrailingWhitespaces call FixTrailingWhitespaces()
-
-"on save
-autocmd BufWritePre * FixTrailingWhitespaces
-
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 
