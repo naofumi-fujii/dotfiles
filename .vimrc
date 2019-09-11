@@ -230,3 +230,6 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 "--> LanguageClient
+
+" http://vim.wikia.com/wiki/Dictionary_completions
+au FileType * execute 'setlocal dict+=~/src/github.com/pocke/dicts/ruby.dict'
