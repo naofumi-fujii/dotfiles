@@ -192,9 +192,6 @@ function! s:my_cr_function()
   return pumvisible() ? deoplete#mappings#close_popup() : "\n"
 endfunction
 
-"http://vim.wikia.com/wiki/Dictionary_completions
-au FileType * execute 'setlocal dict+=~/src/github.com/pocke/dicts/ruby.dict'
-
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
 
 "brew install fzf
