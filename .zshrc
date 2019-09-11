@@ -171,3 +171,5 @@ if [ -d ${HOME}/src/github.com/zsh-users/zsh-completions/src ] ; then
   fpath=(${HOME}/src/github.com/zsh-users/zsh-completions/src $fpath)
   compinit
 fi
+
+eval "$(starship init zsh)"
