@@ -116,11 +116,6 @@ map R <Plug>(operator-replace)
 " vim-quickrun
 set splitright
 
-" enable matchit.vim
-if !exists('loaded_matchit')
-  runtime macros/matchit.vim
-endif
-
 
 fun! OpenCurrentFileByVscode()
   silent exec '!code --goto %:p' . ':' . line(".")
