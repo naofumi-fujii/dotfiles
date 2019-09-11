@@ -197,11 +197,13 @@ let g:ale_linters = {
       \ 'html': [],
       \ 'css': ['stylelint'],
       \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint'],
       \ 'vue': ['eslint'],
       \ }
 let g:ale_linter_aliases = {'vue': 'css'}
 let g:ale_fixers = {
       \ 'vue': ['eslint'],
+      \ 'typescript': ['eslint'],
       \ }
 let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_executable = 'bundle'
