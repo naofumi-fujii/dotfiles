@@ -218,10 +218,10 @@ noremap : ;
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 
+"--> LanguageClient
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-" LanguageClient
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
       \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
@@ -233,3 +233,4 @@ let g:LanguageClient_serverCommands = {
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+"--> LanguageClient
