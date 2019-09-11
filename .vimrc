@@ -25,10 +25,6 @@ call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-fugitive')
 call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
 call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-call dein#add('autozimu/LanguageClient-neovim', {
-      \ 'rev': 'next',
-      \ 'build': 'bash install.sh',
-      \ })
 
 call dein#add('airblade/vim-gitgutter')
 call dein#add('flazz/vim-colorschemes')
@@ -216,22 +212,6 @@ noremap : ;
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 
-"--> LanguageClient
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-let g:LanguageClient_serverCommands = {
-      \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-      \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-      \ 'python': ['/usr/local/bin/pyls'],
-      \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-      \ }
-
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-"--> LanguageClient
 
 " http://vim.wikia.com/wiki/Dictionary_completions
 au FileType * execute 'setlocal dict+=~/src/github.com/pocke/dicts/ruby.dict'
