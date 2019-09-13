@@ -193,7 +193,7 @@ let g:ale_linters = {
       \ }
 let g:ale_linter_aliases = {'vue': 'css'}
 let g:ale_fixers = {
-      \ 'go': ['gofmt'],
+      \ 'go': ['gofmt', 'goimports'],
       \ 'vue': ['eslint'],
       \ 'typescript': ['eslint'],
       \ }
