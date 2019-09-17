@@ -230,8 +230,8 @@ autocmd BufWritePre * FixTrailingWhitespaces
 " for LanguageClient-neovim
 set hidden
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
+      \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+      \ }
 " not stop completion $ & /
 setlocal iskeyword+=$
 setlocal iskeyword+=-
