@@ -49,6 +49,10 @@ call dein#add('slim-template/vim-slim')
 
 "vue
 call dein#add('posva/vim-vue')
+call dein#add('autozimu/LanguageClient-neovim', {
+      \ 'rev': 'next',
+      \ 'build': 'bash install.sh',
+      \ })
 
 " Required:
 call dein#end()
@@ -222,3 +226,18 @@ command! FixTrailingWhitespaces call FixTrailingWhitespaces()
 
 "on save
 autocmd BufWritePre * FixTrailingWhitespaces
+
+" for LanguageClient-neovim
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
+" not stop completion $ & /
+setlocal iskeyword+=$
+setlocal iskeyword+=-
+
+fun! LspFormat()
+  call LanguageClient_textDocument_formatting()
+endfun
+command! LspFormat call LspFormat()
+autocmd BufWritePre * LspFormat
