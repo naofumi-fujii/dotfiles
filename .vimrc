@@ -193,6 +193,7 @@ let g:ale_linters = {
       \ }
 let g:ale_linter_aliases = {'vue': 'css'}
 let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'go': ['gofmt', 'goimports'],
       \ 'vue': ['eslint','prettier'],
       \ 'typescript': ['eslint','prettier'],
@@ -211,14 +212,3 @@ map P <Plug>(miniyank-autoPut)
 
 " http://vim.wikia.com/wiki/Dictionary_completions
 au FileType * execute 'setlocal dict+=~/src/github.com/pocke/dicts/ruby.dict'
-
-" quickly remove trailing whitespaces
-fun! FixTrailingWhitespaces()
-  let l:save = winsaveview()
-  %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-command! FixTrailingWhitespaces call FixTrailingWhitespaces()
-
-"on save
-autocmd BufWritePre * FixTrailingWhitespaces
