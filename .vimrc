@@ -20,7 +20,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Add or remove your plugins here:
 call dein#add('easymotion/vim-easymotion')
-call dein#add('w0rp/ale')
+call dein#add('dense-analysis/ale')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-fugitive')
 call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
