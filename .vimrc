@@ -192,7 +192,6 @@ let g:ale_linters = {
       \ 'vue': ['eslint','prettier'],
       \ 'rust': ['rls'],
       \ }
-let g:ale_linter_aliases = {'vue': 'css'}
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'go': ['gofmt', 'goimports'],
