@@ -201,7 +201,6 @@ let g:ale_fixers = {
       \ 'rust': ['rustfmt'],
       \ }
 let g:ale_fix_on_save = 1
-let g:ale_ruby_rubocop_executable = 'bundle'
 
 
 "swap semicolon to colon
