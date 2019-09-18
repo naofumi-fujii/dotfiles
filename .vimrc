@@ -189,7 +189,7 @@ let g:ale_linters = {
       \ 'css': ['stylelint'],
       \ 'javascript': ['eslint'],
       \ 'typescript': ['eslint','prettier'],
-      \ 'vue': ['eslint','prettier'],
+      \ 'vue': ['eslint','prettier','vls'],
       \ 'rust': ['rls'],
       \ }
 let g:ale_fixers = {
