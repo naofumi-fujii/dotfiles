@@ -231,6 +231,7 @@ autocmd BufWritePre * FixTrailingWhitespaces
 set hidden
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+      \ 'vue': ['vls'],
       \ }
 " not stop completion $ & /
 setlocal iskeyword+=$
@@ -241,3 +242,9 @@ fun! LspFormat()
 endfun
 command! LspFormat call LspFormat()
 autocmd BufWritePre * LspFormat
+
+let g:LanguageClient_rootMarkers = {
+      \ 'javascript': ['package.json'],
+      \ 'vue': ['package.json'],
+      \ 'rust': ['Cargo.toml'],
+      \ }
