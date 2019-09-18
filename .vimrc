@@ -117,10 +117,10 @@ map R <Plug>(operator-replace)
 set splitright
 
 
-fun! OpenCurrentFileByVscode()
+fun! OpenCurrentLineByVscode()
   silent exec '!code --goto %:p' . ':' . line(".")
 endfun
-command! VSCode call OpenCurrentFileByVscode()
+command! VSCode call OpenCurrentLineByVscode()
 
 let g:NERDCustomDelimiters = {
       \  'ruby' : { 'left': '# ', 'leftAlt': '', 'rightAlt': '' },
