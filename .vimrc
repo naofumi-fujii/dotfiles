@@ -190,6 +190,7 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['eslint','prettier'],
       \ 'vue': ['eslint','prettier'],
+      \ 'rust': ['rls'],
       \ }
 let g:ale_linter_aliases = {'vue': 'css'}
 let g:ale_fixers = {
@@ -197,6 +198,7 @@ let g:ale_fixers = {
       \ 'go': ['gofmt', 'goimports'],
       \ 'vue': ['eslint','prettier'],
       \ 'typescript': ['eslint','prettier'],
+      \ 'rust': ['rustfmt'],
       \ }
 let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_executable = 'bundle'
