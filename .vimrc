@@ -188,8 +188,9 @@ let g:ale_linters = {
       \ 'html': [],
       \ 'css': ['stylelint'],
       \ 'javascript': ['eslint'],
-      \ 'typescript': ['eslint','prettier'],
+      \ 'typescript': ['eslint','prettier','tsserver'],
       \ 'vue': ['eslint','prettier','vls'],
+      \ 'haskell': ['stack-build', 'hlint'],
       \ 'rust': ['rls'],
       \ }
 let g:ale_fixers = {
@@ -197,6 +198,7 @@ let g:ale_fixers = {
       \ 'go': ['gofmt', 'goimports'],
       \ 'vue': ['eslint','prettier'],
       \ 'typescript': ['eslint','prettier'],
+      \ 'haskell': ['stylish-haskell'],
       \ 'rust': ['rustfmt'],
       \ }
 let g:ale_fix_on_save = 1
