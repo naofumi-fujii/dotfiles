@@ -32,7 +32,6 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('kana/vim-operator-replace')
 call dein#add('kana/vim-operator-user')
 call dein#add('mhinz/vim-startify')
-call dein#add('osyo-manga/vim-over')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('thinca/vim-quickrun')
 call dein#add('tpope/vim-abolish')
@@ -214,3 +213,5 @@ map P <Plug>(miniyank-autoPut)
 
 " http://vim.wikia.com/wiki/Dictionary_completions
 au FileType * execute 'setlocal dict+=~/src/github.com/pocke/dicts/ruby.dict'
+
+set inccommand=nosplit
