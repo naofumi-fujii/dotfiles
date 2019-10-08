@@ -191,6 +191,7 @@ let g:ale_linters = {
       \ 'vue': ['eslint','prettier','vls'],
       \ 'haskell': ['stack-build', 'hlint'],
       \ 'rust': ['rls'],
+      \ 'php': [''],
       \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
