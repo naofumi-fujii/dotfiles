@@ -77,12 +77,11 @@ bindkey -d
 bindkey -e
 
 function peco-select-dir () {
-  selected=$(cat <(ghq list -p) <(z -l | awk '{print $2}') | sort | uniq | peco )
-  if [ -n "$selected" ]; then
-    BUFFER="cd ${selected}"
+  local PASSED=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$PASSED" ]; then
+    BUFFER="cd ${PASSED}"
     zle accept-line
   fi
-  zle clear-screen
 }
 zle -N peco-select-dir
 bindkey "^]" peco-select-dir
