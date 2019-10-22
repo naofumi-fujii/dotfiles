@@ -148,9 +148,9 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 eval $(thefuck --alias)
 
 # $ rename "hoge" "fuga" -d app/views
-function rename(){
-  codemod --extensions rb,erb,haml,json,c,go $@
-}
+#function rename(){
+#  codemod --extensions rb,erb,haml,json,c,go $@
+#}
 
 function gg() {
   if [ -n "$1" ]; then
