@@ -43,18 +43,6 @@ autoload colors && colors
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-autoload -Uz vcs_info
-setopt prompt_subst
-
-zstyle ':vcs_info:*' formats '%s][%F{green}%b%f'
-zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
-precmd() { vcs_info }
-
-PROMPT='
-[${vcs_info_msg_0_}]
-%{${fg[yellow]}%}%~%{${reset_color}%}
-[%n] $ '
-
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -170,3 +158,18 @@ if [ -d ${HOME}/src/github.com/zsh-users/zsh-completions/src ] ; then
   fpath=(${HOME}/src/github.com/zsh-users/zsh-completions/src $fpath)
   compinit
 fi
+
+
+
+# prompt
+autoload -Uz vcs_info
+setopt prompt_subst
+
+zstyle ':vcs_info:*' formats '%s][%F{green}%b%f'
+zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
+precmd() { vcs_info }
+
+PROMPT='
+[${vcs_info_msg_0_}]
+%{${fg[yellow]}%}%~%{${reset_color}%}
+[%n] $ '
