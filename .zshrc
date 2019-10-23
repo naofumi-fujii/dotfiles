@@ -53,7 +53,7 @@ precmd() { vcs_info }
 PROMPT='
 [${vcs_info_msg_0_}]
 %{${fg[yellow]}%}%~%{${reset_color}%}
-[%n]$ '
+[%n] $ '
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
