@@ -197,11 +197,14 @@ let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'go': ['gofmt', 'goimports'],
       \ 'vue': ['eslint','prettier'],
+      \ 'javascript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'typescript': ['eslint','prettier'],
       \ 'haskell': ['stylish-haskell'],
       \ 'rust': ['rustfmt'],
+      \ 'ruby': ['rufo'],
       \ }
 let g:ale_fix_on_save = 1
+let g:ale_ruby_rufo_executable = 'bundle'
 
 
 "swap semicolon to colon
