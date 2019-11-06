@@ -32,7 +32,7 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('kana/vim-operator-replace')
 call dein#add('kana/vim-operator-user')
 call dein#add('mhinz/vim-startify')
-call dein#add('scrooloose/nerdcommenter')
+call dein#add('tyru/caw.vim')
 call dein#add('thinca/vim-quickrun')
 call dein#add('tpope/vim-abolish')
 call dein#add('tpope/vim-endwise')
@@ -121,13 +121,7 @@ fun! OpenCurrentLineByVscode()
 endfun
 command! VSCode call OpenCurrentLineByVscode()
 
-"let g:NERDCustomDelimiters = {
-"      \  'ruby' : { 'left': '# ', 'leftAlt': '', 'rightAlt': '' },
-"      \  'haskell' : { 'left': '-- ', 'leftAlt': '', 'rightAlt': '' }
-"      \  }
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
 
 "customize surround.vim
 "ASCIIコード表 http://www9.plala.or.jp/sgwr-t/c_sub/ascii.html
@@ -145,6 +139,10 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 autocmd BufRead,BufNewFile *.rb setfiletype ruby
 autocmd BufRead,BufNewFile *.geojson setfiletype json
 au! BufRead,BufNewFile *.tt setfiletype html
+
+" caw.vim
+nmap <C-_> <Plug>(caw:hatpos:toggle)
+vmap <C-_> <Plug>(caw:hatpos:toggle)
 
 "easymotion
 let g:EasyMotion_do_mapping = 0 "Disable default mappings
