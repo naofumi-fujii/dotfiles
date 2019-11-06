@@ -184,6 +184,7 @@ let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
 "brew install fzf
 set rtp+=/usr/local/opt/fzf
 
+map <C-[> <Plug>(ale_go_to_definition_in_vsplit)
 
 let g:ale_linters = {
       \ 'html': [],
