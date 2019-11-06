@@ -121,10 +121,13 @@ fun! OpenCurrentLineByVscode()
 endfun
 command! VSCode call OpenCurrentLineByVscode()
 
-let g:NERDCustomDelimiters = {
-      \  'ruby' : { 'left': '# ', 'leftAlt': '', 'rightAlt': '' },
-      \  'haskell' : { 'left': '-- ', 'leftAlt': '', 'rightAlt': '' }
-      \  }
+"let g:NERDCustomDelimiters = {
+"      \  'ruby' : { 'left': '# ', 'leftAlt': '', 'rightAlt': '' },
+"      \  'haskell' : { 'left': '-- ', 'leftAlt': '', 'rightAlt': '' }
+"      \  }
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
 
 "customize surround.vim
 "ASCIIコード表 http://www9.plala.or.jp/sgwr-t/c_sub/ascii.html
