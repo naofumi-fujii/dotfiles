@@ -207,7 +207,7 @@ let g:ale_fixers = {
       \ 'ruby': ['rufo','remove_trailing_lines','trim_whitespace'],
       \ }
 let g:ale_fix_on_save = 1
-let g:ale_ruby_rufo_executable = 'bundle'
+" let g:ale_ruby_rufo_executable = 'bundle'
 
 
 "swap semicolon to colon
