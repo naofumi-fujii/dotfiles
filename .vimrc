@@ -195,6 +195,7 @@ let g:ale_linters = {
       \ 'haskell': ['stack-build', 'hlint'],
       \ 'rust': ['rls'],
       \ 'php': [''],
+      \ 'go': ['gopls'],
       \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
