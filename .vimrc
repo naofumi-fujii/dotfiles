@@ -28,6 +28,8 @@ call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
 call dein#add('airblade/vim-gitgutter')
 call dein#add('flazz/vim-colorschemes')
+call dein#add('wadackel/vim-dogrun')
+
 call dein#add('itchyny/lightline.vim')
 call dein#add('kana/vim-operator-replace')
 call dein#add('kana/vim-operator-user')
@@ -66,7 +68,8 @@ endif
 syntax on
 
 " color theme
-colorscheme railscasts
+" colorscheme railscasts
+colorscheme dogrun
 
 " highlight horizontal
 set cursorline
@@ -101,6 +104,7 @@ set laststatus=2
 
 "https://github.com/itchyny/lightline.vim/issues/87
 let g:lightline = {
+      \ 'colorscheme': 'dogrun',
       \ 'component_function': {
       \   'filename': 'LightLineFilename'
       \ }
