@@ -1,0 +1,43 @@
+---
+- name: Update homebrew
+  homebrew: update_homebrew=yes upgrade_all=yes
+
+- name: Install homebrew packages
+  homebrew: name={{ item.name }} install_options={{ item.options|default() }}
+  with_items:
+    - { name: 'readline' }
+    - { name: 'coreutils' }
+
+    - { name: 'zsh' }
+    - { name: 'zsh-syntax-highlighting' }
+    - { name: 'neovim' }
+    - { name: 'tmux' }
+
+    - { name: 'git' }
+    - { name: 'tig' }
+    - { name: 'gnu-sed' }
+    - { name: 'hub' }
+    - { name: 'ghq' }
+    - { name: 'peco' }
+    - { name: 'fzf' }
+    - { name: 'rg' }
+    - { name: 'ag' }
+    - { name: 'gibo' }
+    - { name: 'tree' }
+    - { name: 'jq' }
+    - { name: 'codemod' }
+    - { name: 'rbenv' }
+    - { name: 'goenv' }
+    - { name: 'pyenv' }
+    - { name: 'nodenv' }
+    - { name: 'thefuck' }
+    - { name: 'reattach-to-user-namespace' }
+
+- name: Install homebrew cask packages
+  homebrew_cask: name={{ item }}
+  with_items:
+    - google-japanese-ime
+    - slack
+    - iterm2
+    - clipy
+    - visual-studio-code
