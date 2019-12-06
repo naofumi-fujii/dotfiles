@@ -1,5 +1,0 @@
-- hosts: localhost
-  connection: local
-  gather_facts: no
-  tasks:
-    - import_tasks: tasks/main.yml
