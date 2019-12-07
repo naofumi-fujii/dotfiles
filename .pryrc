@@ -15,6 +15,6 @@ end
 if which("fzf") != nil
   # https://stackoverflow.com/questions/46167332/how-to-i-make-reverse-i-search-history-use-fzf-in-irb-or-pry-console
   def RbReadline.rl_reverse_search_history(sign, key)
-    rl_insert_text `cat #{Pry.config.history.file} | fzf --tac |  tr '\n' ' '`
+    rl_insert_text `cat #{Pry.config.history.file} |ruby -e '$stdin.each_line.to_a.uniq.each do |line| puts line end'| fzf --tac |  tr '\n' ' '`
   end
 end
