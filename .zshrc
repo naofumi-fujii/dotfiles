@@ -176,3 +176,6 @@ PROMPT='
 
 # postgres10
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+
+# go module
+export GO111MODULE=on
