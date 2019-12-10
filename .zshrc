@@ -75,7 +75,7 @@ zle -N peco-select-dir
 bindkey "^]" peco-select-dir
 
 function peco-select-branch () {
-  local selected_branch_name="$(git branch -a | peco | tr -d ' ')"
+  local selected_branch_name="$(git branch -a | peco | sed -e 's/^*/ /g' | tr -d ' ')"
   case "$selected_branch_name" in
     *-\>* )
       selected_branch_name="$(echo ${selected_branch_name} | perl -ne 's/^.*->(.*?)\/(.*)$/\2/;print')";;
