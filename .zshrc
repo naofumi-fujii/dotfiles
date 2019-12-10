@@ -173,3 +173,6 @@ PROMPT='
 [${vcs_info_msg_0_}][%D{%y/%m/%f}|%*]
 %{${fg[yellow]}%}%~%{${reset_color}%}
 [%n] $ '
+
+# postgres10
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
