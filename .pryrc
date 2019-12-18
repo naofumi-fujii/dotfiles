@@ -1,3 +1,4 @@
+# requires `gem "rb-readline"`
 require "rb-readline"
 
 # https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-program-exists-in-path-from-ruby
