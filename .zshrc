@@ -12,6 +12,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$(brew --prefix)/share/git-core/contrib/diff-highlight
 
 export LANG=ja_JP.UTF-8
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
 alias ls="gls --color=auto -Slah"
 alias vi='nvim'
