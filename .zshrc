@@ -171,7 +171,7 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 precmd() { vcs_info }
 
 PROMPT='
-[${vcs_info_msg_0_}][%D|%*]
+[${vcs_info_msg_0_}][%D{%Y-%m-%d}|%*]
 %{${fg[yellow]}%}%~%{${reset_color}%}
 [%n] $ '
 
