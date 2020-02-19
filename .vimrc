@@ -188,7 +188,6 @@ map <C-j> <Plug>(ale_go_to_definition_in_vsplit)
 
 let g:ale_linters = {
       \ 'html': [],
-      \ 'css': ['stylelint'],
       \ 'javascript': ['eslint'],
       \ 'typescript': ['eslint','prettier','tsserver'],
       \ 'vue': ['eslint','prettier','vls'],
@@ -199,6 +198,7 @@ let g:ale_linters = {
       \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'scss': ['stylelint'],
       \ 'go': ['gofmt', 'goimports'],
       \ 'vue': ['eslint','prettier'],
       \ 'javascript': ['eslint', 'remove_trailing_lines', 'trim_whitespace'],
