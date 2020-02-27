@@ -220,6 +220,6 @@ map P <Plug>(miniyank-autoPut)
 
 
 " http://vim.wikia.com/wiki/Dictionary_completions
-au FileType * execute 'setlocal dict+=~/src/github.com/pocke/dicts/ruby.dict'
+au FileType * execute 'setlocal dict+=~/src/github.com/naofumi-fujii/dicts/ruby.dict'
 
 set inccommand=nosplit
