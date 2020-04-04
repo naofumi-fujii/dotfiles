@@ -49,6 +49,10 @@ call dein#add('slim-template/vim-slim')
 "vue
 call dein#add('posva/vim-vue')
 
+" react
+call dein#add('leafgarland/typescript-vim')
+call dein#add('peitalin/vim-jsx-typescript')
+
 " Required:
 call dein#end()
 
