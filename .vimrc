@@ -69,6 +69,10 @@ endif
 "enable color syntax
 syntax on
 
+" 全角スペースの背景を白に変更
+autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
+autocmd VimEnter * match FullWidthSpace /　/
+
 " color theme
 colorscheme railscasts
 
