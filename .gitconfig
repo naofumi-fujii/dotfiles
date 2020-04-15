@@ -13,7 +13,7 @@
   purge-merged-branches = !git branch --merged | grep -v \\* | grep -v master | xargs -I % git branch -d %
   bye-branches-except-master-and-current = !git branch | grep -v \\* | grep -v master | xargs -I % git branch -D %
   current-branch = !git branch -a | grep '^*' | cut -b 3-
-  tag-checkout-by-branch = !git tag | peco | tag-checkout-branch
+  tag-checkout-by-branch = !git tag | peco | tag-checkout-branch-git
 [push]
   default = simple
 [core]
