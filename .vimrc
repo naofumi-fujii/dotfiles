@@ -181,11 +181,11 @@ nnoremap <silent><C-]> :Tags <c-r>=expand("<cword>")<cr><CR>
 "select deoplete completion with TAB key
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
-" no insert after select
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? deoplete#mappings#close_popup() : "\n"
-endfunction
+" no CR insert after select
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+"   return pumvisible() ? deoplete#mappings#close_popup() : "\n"
+" endfunction
 
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
 
