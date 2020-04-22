@@ -10,15 +10,11 @@ call dein#begin(expand('~/'))
 " Required:
 call dein#add('Shougo/dein.vim')
 
-" deoplete.nvim
-call dein#add('Shougo/deoplete.nvim')
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-endif
-let g:deoplete#enable_at_startup = 1
 
 " Add or remove your plugins here:
+call dein#add('prabirshrestha/asyncomplete.vim')
+call dein#add('prabirshrestha/asyncomplete-buffer.vim')
+
 call dein#add('easymotion/vim-easymotion')
 call dein#add('dense-analysis/ale')
 call dein#add('tpope/vim-surround')
@@ -178,14 +174,6 @@ nnoremap <silent><C-h> :History<CR>
 "open word under cursor
 nnoremap <silent><C-]> :Tags <c-r>=expand("<cword>")<cr><CR>
 
-"select deoplete completion with TAB key
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
-" no insert after select
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? deoplete#mappings#close_popup() : "\n"
-endfunction
 
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
 
@@ -231,3 +219,24 @@ map P <Plug>(miniyank-autoPut)
 au FileType * execute 'setlocal dict+=~/src/github.com/naofumi-fujii/dicts/ruby.dict'
 
 set inccommand=nosplit
+
+" asyncomplete
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr><TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
