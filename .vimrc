@@ -12,6 +12,9 @@ call dein#add('Shougo/dein.vim')
 
 
 " Add or remove your plugins here:
+call dein#add('prabirshrestha/asyncomplete.vim')
+call dein#add('prabirshrestha/asyncomplete-buffer.vim')
+
 call dein#add('easymotion/vim-easymotion')
 call dein#add('dense-analysis/ale')
 call dein#add('tpope/vim-surround')
@@ -216,3 +219,24 @@ map P <Plug>(miniyank-autoPut)
 au FileType * execute 'setlocal dict+=~/src/github.com/naofumi-fujii/dicts/ruby.dict'
 
 set inccommand=nosplit
+
+" asyncomplete
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr><TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
