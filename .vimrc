@@ -166,11 +166,11 @@ map  N <Plug>(easymotion-prev)
 map <Leader><Leader>w <Plug>(easymotion-bd-w)
 
 
-command! -bang -nargs=* GGrep
-      \ call fzf#vim#grep(
-      \   'git grep --line-number '.shellescape(<q-args>), 0,
-      \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
-nnoremap <silent><C-g> :GGrep<CR>
+" command! -bang -nargs=* GGrep
+"      \ call fzf#vim#grep(
+"      \   'git grep --line-number '.shellescape(<q-args>), 0,
+"      \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+" nnoremap <silent><C-g> :GGrep<CR>
 nnoremap <silent><Leader>g :Gblame<CR>
 nnoremap <silent><C-p> :GitFiles<CR>
 nnoremap <silent><C-f> :BLines<CR>
