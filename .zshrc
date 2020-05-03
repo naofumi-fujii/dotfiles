@@ -174,3 +174,6 @@ export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 
 # go module
 export GO111MODULE=on
+
+# ghcup
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
