@@ -7,6 +7,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=${JAVA_HOME}/bin:${PATH}
 
 export GOPATH=$HOME
+export GOROOT=$(go env GOROOT)
 export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$(brew --prefix)/share/git-core/contrib/diff-highlight
