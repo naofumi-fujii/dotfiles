@@ -72,11 +72,12 @@ endif
 syntax on
 
 " 全角スペースの背景を白に変更
-autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
-autocmd VimEnter * match FullWidthSpace /　/
+" autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
+" autocmd VimEnter * match FullWidthSpace /　/
 
 " color theme
-colorscheme railscasts
+autocmd BufEnter * colorscheme railscasts
+autocmd BufEnter *.hs colorscheme wombat256i
 
 " highlight horizontal
 set cursorline
