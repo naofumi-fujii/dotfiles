@@ -53,6 +53,8 @@ call dein#add('posva/vim-vue')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('peitalin/vim-jsx-typescript')
 
+call dein#add('pantharshit00/vim-prisma')
+
 " Required:
 call dein#end()
 
