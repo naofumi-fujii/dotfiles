@@ -76,7 +76,7 @@ autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
 autocmd VimEnter * match FullWidthSpace /　/
 
 " color theme
-colorscheme wombat256i
+colorscheme iceberg
 
 " highlight horizontal
 set cursorline
