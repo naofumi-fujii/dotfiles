@@ -37,3 +37,5 @@
     textconv=iconv -f cp932 -t utf-8
 [fetch]
 	prune = true
+[pull]
+	rebase = false
