@@ -65,7 +65,7 @@ if dein#load_state('/Users/naofumi.fujii/.cache/dein')
 
   " Required:
   call dein#end()
-  call dein#save_state()
+  " call dein#save_state()
 endif
 
 " Required:
