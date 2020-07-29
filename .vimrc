@@ -17,14 +17,6 @@ if dein#load_state('/Users/naofumi.fujii/.cache/dein')
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
-  " deoplete.nvim
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-  let g:deoplete#enable_at_startup = 1
-
   " Add or remove your plugins here:
   call dein#add('easymotion/vim-easymotion')
   call dein#add('dense-analysis/ale')
@@ -61,6 +53,15 @@ if dein#load_state('/Users/naofumi.fujii/.cache/dein')
   call dein#add('peitalin/vim-jsx-typescript')
 
   call dein#add('pantharshit00/vim-prisma')
+
+  " deoplete.nvim
+  " なんか上の方に持っていくとcompleteが効かないときがある
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
 
   " Required:
   call dein#end()
