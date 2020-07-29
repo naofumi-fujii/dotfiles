@@ -177,5 +177,3 @@ export GO111MODULE=on
 
 # ghcup
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
