@@ -1,81 +1,51 @@
-if &compatible
-  set nocompatible               " Be iMproved
+call plug#begin('~/.vim/plugged')
+
+" Add or remove your plugins here:
+Plug 'easymotion/vim-easymotion'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'airblade/vim-gitgutter'
+Plug 'flazz/vim-colorschemes'
+Plug 'itchyny/lightline.vim'
+Plug 'kana/vim-operator-replace'
+Plug 'kana/vim-operator-user'
+Plug 'mhinz/vim-startify'
+Plug 'tyru/caw.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-endwise'
+Plug 'h1mesuke/vim-alignta'
+Plug 'mattn/emmet-vim'
+Plug 'bfredl/nvim-miniyank'
+Plug 'ruanyl/vim-gh-line'
+
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'slim-template/vim-slim'
+
+Plug 'posva/vim-vue'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
+Plug 'pantharshit00/vim-prisma'
+
+" deoplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
+let g:deoplete#enable_at_startup = 1
 
-" Required:
-set runtimepath+=/Users/naofumi.fujii/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/Users/naofumi.fujii/.cache/dein')
-  call dein#begin('/Users/naofumi.fujii/.cache/dein')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('/Users/naofumi.fujii/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
-
-  " Add or remove your plugins here:
-  call dein#add('easymotion/vim-easymotion')
-  call dein#add('dense-analysis/ale')
-  call dein#add('tpope/vim-surround')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('flazz/vim-colorschemes')
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('kana/vim-operator-replace')
-  call dein#add('kana/vim-operator-user')
-  call dein#add('mhinz/vim-startify')
-  call dein#add('tyru/caw.vim')
-  call dein#add('thinca/vim-quickrun')
-  call dein#add('tpope/vim-abolish')
-  call dein#add('tpope/vim-endwise')
-  call dein#add('h1mesuke/vim-alignta')
-  call dein#add('mattn/emmet-vim')
-  call dein#add('bfredl/nvim-miniyank')
-  call dein#add('ruanyl/vim-gh-line')
-
-  "ruby
-  call dein#add('vim-ruby/vim-ruby')
-  call dein#add('tpope/vim-rails')
-  call dein#add('slim-template/vim-slim')
-
-  "vue
-  call dein#add('posva/vim-vue')
-
-  " react
-  call dein#add('leafgarland/typescript-vim')
-  call dein#add('peitalin/vim-jsx-typescript')
-
-  call dein#add('pantharshit00/vim-prisma')
-
-  " deoplete.nvim
-  " なんか上の方に持っていくとcompleteが効かないときがある
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-  let g:deoplete#enable_at_startup = 1
-
-  " Required:
-  call dein#end()
-  " call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+" Initialize plugin system
+call plug#end()
 
 " private settings from here:
 
@@ -194,12 +164,6 @@ nnoremap <silent><C-]> :Tags <c-r>=expand("<cword>")<cr><CR>
 "select deoplete completion with TAB key
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
-" no CR insert after select
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-" function! s:my_cr_function()
-"   return pumvisible() ? deoplete#mappings#close_popup() : "\n"
-" endfunction
-
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
 
 "brew install fzf
@@ -230,8 +194,6 @@ let g:ale_fixers = {
       \ 'ruby': ['rufo','remove_trailing_lines','trim_whitespace'],
       \ }
 let g:ale_fix_on_save = 1
-" let g:ale_ruby_rufo_executable = 'bundle'
-
 
 "swap semicolon to colon
 noremap ; :
