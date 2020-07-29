@@ -17,6 +17,51 @@ if dein#load_state('/Users/naofumi.fujii/.cache/dein')
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
+  " deoplete.nvim
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
+
+  " Add or remove your plugins here:
+  call dein#add('easymotion/vim-easymotion')
+  call dein#add('dense-analysis/ale')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('flazz/vim-colorschemes')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('kana/vim-operator-replace')
+  call dein#add('kana/vim-operator-user')
+  call dein#add('mhinz/vim-startify')
+  call dein#add('tyru/caw.vim')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('tpope/vim-abolish')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('h1mesuke/vim-alignta')
+  call dein#add('mattn/emmet-vim')
+  call dein#add('bfredl/nvim-miniyank')
+  call dein#add('ruanyl/vim-gh-line')
+
+  "ruby
+  call dein#add('vim-ruby/vim-ruby')
+  call dein#add('tpope/vim-rails')
+  call dein#add('slim-template/vim-slim')
+
+  "vue
+  call dein#add('posva/vim-vue')
+
+  " react
+  call dein#add('leafgarland/typescript-vim')
+  call dein#add('peitalin/vim-jsx-typescript')
+
+  call dein#add('pantharshit00/vim-prisma')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -27,9 +72,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 " private settings from here:
 
@@ -134,9 +179,9 @@ map <Leader><Leader>w <Plug>(easymotion-bd-w)
 
 
 command! -bang -nargs=* GGrep
-     \ call fzf#vim#grep(
-     \   'git grep --line-number '.shellescape(<q-args>), 0,
-     \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+      \ call fzf#vim#grep(
+      \   'git grep --line-number '.shellescape(<q-args>), 0,
+      \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 nnoremap <silent><C-g> :GGrep<CR>
 nnoremap <silent><Leader>g :Gblame<CR>
 nnoremap <silent><C-p> :GitFiles<CR>
