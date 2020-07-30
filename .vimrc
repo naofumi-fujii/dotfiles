@@ -90,14 +90,14 @@ vnoremap v $h
 " lightline.vim
 set laststatus=2
 
-"https://github.com/itchyny/lightline.vim/issues/87
+" Path to file? · Issue #87 · itchyny/lightline.vim https://github.com/itchyny/lightline.vim/issues/87
 let g:lightline = {
       \ 'component_function': {
-      \   'filename': 'LightLineFilename'
+      \   'filename': 'LightlineFilename'
       \ }
       \ }
-function! LightLineFilename()
-  return expand('%')
+function! LightlineFilename()
+  return expand("%:p")
 endfunction
 
 " replace by text-obj
