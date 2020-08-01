@@ -154,7 +154,17 @@ command! -bang -nargs=* GGrep
       \   'git grep --line-number '.shellescape(<q-args>), 0,
       \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 nnoremap <silent><C-g> :GGrep<CR>
-nnoremap <silent><Leader>g :Gblame<CR>
+nnoremap <silent><Leader>g :call MyGitBlameFunction()<CR>
+
+" いつからかGit blameでtoggleできなくなったので自作
+function! MyGitBlameFunction()
+  if (&ft=='fugitiveblame')
+    :q
+  else
+    :Gblame
+  endif
+endfunction
+
 nnoremap <silent><C-p> :GitFiles<CR>
 nnoremap <silent><C-f> :BLines<CR>
 nnoremap <silent><C-h> :History<CR>
