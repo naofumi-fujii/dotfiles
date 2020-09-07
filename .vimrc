@@ -117,6 +117,7 @@ command! VSCode call OpenCurrentLineByVscode()
 "customize surround.vim
 "ASCIIコード表 http://www9.plala.or.jp/sgwr-t/c_sub/ascii.html
 let g:surround_35 = "#\r"
+let g:surround_36 = "$\r"
 let g:surround_38 = "&:\r"
 let g:surround_42 = "*\r"
 let g:surround_64 = "@\r"
