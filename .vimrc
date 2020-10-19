@@ -201,7 +201,6 @@ let g:ale_fixers = {
       \ 'typescript': ['eslint','prettier'],
       \ 'haskell': ['stylish-haskell'],
       \ 'rust': ['rustfmt'],
-      \ 'php': ['phpcbf'],
       \ 'ruby': ['rufo','remove_trailing_lines','trim_whitespace'],
       \ }
 let g:ale_fix_on_save = 1
