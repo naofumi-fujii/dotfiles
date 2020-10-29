@@ -16,6 +16,7 @@ export LANG=ja_JP.UTF-8
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
 alias ls="gls --color=auto -Slah"
+alias 'rename'='rename -v'
 alias vi='nvim'
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
