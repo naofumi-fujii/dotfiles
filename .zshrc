@@ -161,8 +161,9 @@ fi
 autoload -Uz vcs_info
 setopt prompt_subst
 
-zstyle ':vcs_info:*' formats '%s][%F{green}%b%f'
-zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
+zstyle ':vcs_info:git:*' formats '%s][%F{green}%b%f'
+zstyle ':vcs_info:git:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
+
 precmd() { vcs_info }
 
 PROMPT='
